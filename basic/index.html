@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- <script>
+      const rootEl = document.getElementById("root");
+      const heading = document.createElement("h1");
+      heading.innerText = "Hey Shubhu!";
+      rootEl.appendChild(heading)
+    </script> -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script>
+      // const rootEl =ReactDOM.createRoot(document.getElementById('root'))
+      // rootEl.render(heading) this not wokring
+      // const heading =React.createElement('div',{},'hey Shubhu') below working fine [line 22 ,23]
+      // ReactDOM.render(heading, document.getElementById('root'));
+      const parent = React.createElement(
+        "div",
+        { id: "parent" },
+        React.createElement(
+          "div",
+          { id: "child" },
+          React.createElement(
+            "div",
+            {},
+            [React.createElement("h1", {}, "I love shubhu "),React.createElement("h1", {}, "I love shubhu "),React.createElement("h1", {}, "I love shubhu ")]
+          )
+        )
+      );
+      ReactDOM.render(parent, document.getElementById("root"));
+    </script>
+  </body>
+</html>
